@@ -17,8 +17,8 @@ const mongoose = require('./connection.js')
  const TeamSchema = new mongoose.Schema({
     name: String,
     platform: String,
-    format: String,
-    imgLink: String
+    scoringFormat: String,
+    icon: String
 })
 
 /* Step 3
