@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import SingleTeam from './SingleTeam'
+import CreateTeamForm from './CreateTeamForm'
 import { Link } from 'react-router-dom'
 
 export default class Teams extends Component {
 
     state = {
-        teams: []
+        teams: [],
+        isNewFormDisplayed: false
     }
 
     /* Step 4
@@ -24,6 +25,12 @@ export default class Teams extends Component {
             })
     }
 
+    handleToggleCreateForm() {
+        this.setState((state) => {
+            return { isNewFormDisplayed: !state.isNewFormDisplayed }
+        })
+    }
+
 
     render() {
         let teamsList = this.state.teams.map((team) => {
@@ -35,10 +42,15 @@ export default class Teams extends Component {
         })
 
         return (
-            <div>
-                <h2>Teams List</h2>
-                {teamsList}
-            </div>
+            this.state.isNewFormDisplayed
+                ?
+                <CreateTeamForm />
+                :
+                <div>
+                    <h2>Teams List</h2>
+                    <button onClick={this.handleToggleCreateForm}>Create New Team</button>
+                    {teamsList}
+                </div>
         )
     }
 }
