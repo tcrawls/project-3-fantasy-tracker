@@ -1,17 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Teams from './components/Teams.js'
+import SingleTeam from './components/SingleTeam.js'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <div>Home</div>
-      <div>About</div>
-      <h1>Fantasy Tracker</h1>
       <Router>
+        <div><Link to="/">Home</Link></div>
+        <div><Link to="#">About</Link></div>
+        <h1>Fantasy Tracker</h1>
         <Switch>
           <Route exact path="/" component={Teams} />
+          <Route path="/teams/:teamId" component={SingleTeam} />
         </Switch>
       </Router>
     </div>

@@ -5,7 +5,7 @@ import axios from 'axios'
 export default class SingleTeam extends Component {
 
     state = {
-        teams: {}
+        team: {}
     }
 
     /* Step 4
@@ -18,7 +18,7 @@ export default class SingleTeam extends Component {
     componentDidMount() {
         axios.get(`/api/teams/${this.props.match.params.teamId}`)
             .then((res) => {
-                this.setState({ teams: res.data })
+                this.setState({ team: res.data })
             })
     }
 
