@@ -18,6 +18,7 @@ const mongoose = require('./connection.js')
     name: String,
     platform: String,
     scoringFormat: String,
+    record: String,
     icon: String
 })
 
