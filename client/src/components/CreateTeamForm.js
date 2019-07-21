@@ -50,6 +50,10 @@ export default class CreateTeamForm extends Component {
                     <label htmlFor="platform">Platform: </label>
                     <input type="text" id="platform" name="platform" onChange={this.handleInputChange} value={this.state.team.platform} />
                 </div>
+                <div>
+                    <label htmlFor="scoringFormat">Scoring Format: </label>
+                    <input type="text" id="scoringFormat" name="scoringFormat" onChange={this.handleInputChange} value={this.state.team.scoringFormat} />
+                </div>
                 <input type="submit" value="Create Team" />
             </form>
         )

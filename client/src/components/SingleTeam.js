@@ -5,7 +5,8 @@ import axios from 'axios'
 export default class SingleTeam extends Component {
 
     state = {
-        team: {}
+        team: {},
+        redirectToHome: false
     }
 
     /* Step 4
@@ -22,11 +23,20 @@ export default class SingleTeam extends Component {
             })
     }
 
+    handleDeleteTeam() {
+        axios.delete(`/api/teams/${this.state.team._id}`)
+            .then(() => {
+                this.setState({ redirectToHome: true })
+            })
+    }
+
  
     render() {
         return (
             <div>
                 <h2>{this.state.team.name}</h2>
+                <button>Edit Team</button>
+                <button onClick={this.handleDeleteTeam}>Delete Team</button>
                 <div>{this.state.team.record}</div>
                 <div>{this.state.team.platform}</div>
                 <div>{this.state.team.scoringFormat}</div>
