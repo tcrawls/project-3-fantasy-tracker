@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 export default class SingleTeam extends Component {
 
@@ -23,7 +23,7 @@ export default class SingleTeam extends Component {
             })
     }
 
-    handleDeleteTeam() {
+    handleDeleteTeam = () => {
         axios.delete(`/api/teams/${this.state.team._id}`)
             .then(() => {
                 this.setState({ redirectToHome: true })
@@ -32,6 +32,9 @@ export default class SingleTeam extends Component {
 
  
     render() {
+        if (this.state.redirectToHome) {
+            return <Redirect to="/" />
+        }
         return (
             <div>
                 <h2>{this.state.team.name}</h2>
