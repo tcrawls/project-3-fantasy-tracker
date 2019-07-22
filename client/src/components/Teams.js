@@ -25,7 +25,7 @@ export default class Teams extends Component {
             })
     }
 
-    handleToggleCreateForm() {
+    handleToggleCreateForm = () => {
         this.setState((state) => {
             return { isNewFormDisplayed: !state.isNewFormDisplayed }
         })

@@ -29,8 +29,6 @@ export default class CreateTeamForm extends Component {
                 this.setState({
                     redirectToHome: true
                 })
-                // this.props.getAllCreatures()
-                // this.props.toggleNe
             })
     }
 
