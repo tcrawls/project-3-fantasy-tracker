@@ -37,9 +37,10 @@ export default class SingleTeam extends Component {
                 <h2>{this.state.team.name}</h2>
                 <button>Edit Team</button>
                 <button onClick={this.handleDeleteTeam}>Delete Team</button>
-                <div>{this.state.team.record}</div>
-                <div>{this.state.team.platform}</div>
-                <div>{this.state.team.scoringFormat}</div>
+                <div>Platform: {this.state.team.platform}</div>
+                <div>Scoring Format: {this.state.team.scoringFormat}</div>
+                <div>Current Record: {this.state.team.record}</div>
+                <img src={this.state.team.icon} />
             </div>
         )
     }

@@ -10,7 +10,7 @@ export default class CreateTeamForm extends Component {
             name: '',
             platform: '',
             scoringFormat: '',
-            record: 0,
+            record: '',
             icon: ''
         },
         redirectToHome: false
@@ -51,6 +51,14 @@ export default class CreateTeamForm extends Component {
                 <div>
                     <label htmlFor="scoringFormat">Scoring Format: </label>
                     <input type="text" id="scoringFormat" name="scoringFormat" onChange={this.handleInputChange} value={this.state.team.scoringFormat} />
+                </div>
+                <div>
+                    <label htmlFor="record">Current Record: </label>
+                    <input type="string" id="record" name="record" onChange={this.handleInputChange} value={this.state.team.record} />
+                </div>
+                <div>
+                    <label htmlFor="icon">Icon Image: </label>
+                    <input type="text" id="icon" name="icon" onChange={this.handleInputChange} value={this.state.team.icon} />
                 </div>
                 <input type="submit" value="Create Team" />
             </form>
