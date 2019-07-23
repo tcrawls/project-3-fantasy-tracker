@@ -32,7 +32,7 @@ export default class CreateTeamForm extends Component {
 
     render() {
         if (this.state.redirectToHome) {
-            return <Redirect to="/" />
+            return <Redirect to="/teams" />
         }
         return (
             <form onSubmit={this.handleSubmit}>
