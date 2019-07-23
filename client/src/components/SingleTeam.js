@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 export default class SingleTeam extends Component {
 
@@ -17,6 +17,7 @@ export default class SingleTeam extends Component {
     *   setState can be run here as well
     *   -REMINDER remember `setState` it is an async function
     */
+    
     componentDidMount() {
         axios.get(`/api/teams/${this.props.match.params.teamId}`)
             .then((res) => {
@@ -89,7 +90,7 @@ export default class SingleTeam extends Component {
                 <div>Platform: {this.state.team.platform}</div>
                 <div>Scoring Format: {this.state.team.scoringFormat}</div>
                 <div>Current Record: {this.state.team.record}</div>
-                <img src={this.state.team.icon} />
+                <img src={this.state.team.icon} alt="Team Icon" />
             </div>
         )
     }

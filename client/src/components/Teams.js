@@ -36,7 +36,7 @@ export default class Teams extends Component {
         let teamsList = this.state.teams.map((team) => {
             return (
                 <div key={team._id}>
-                    <Link key={team._id} to={`/teams/${team._id}`}>{team.name}</Link>
+                    <Link key={team._id} to={`/${team._id}`}>{team.name}</Link>
                 </div>
             )
         })
