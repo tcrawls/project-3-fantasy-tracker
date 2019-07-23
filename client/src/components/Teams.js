@@ -7,7 +7,6 @@ export default class Teams extends Component {
 
     state = {
         teams: [],
-        isNewFormDisplayed: false
     }
 
     /* Step 4
@@ -25,32 +24,31 @@ export default class Teams extends Component {
             })
     }
 
-    handleToggleCreateForm = () => {
-        this.setState((state) => {
-            return { isNewFormDisplayed: !state.isNewFormDisplayed }
-        })
-    }
-
+    // handleToggleCreateForm = () => {
+    //     this.setState((state) => {
+    //         return { isNewFormDisplayed: !state.isNewFormDisplayed }
+    //     })
+    // }
 
     render() {
         let teamsList = this.state.teams.map((team) => {
             return (
                 <div key={team._id}>
-                    <Link key={team._id} to={`/${team._id}`}>{team.name}</Link>
+                    <Link key={team._id} to={`/teams/${team._id}`}>{team.name}</Link>
                 </div>
             )
         })
 
         return (
-            this.state.isNewFormDisplayed
-                ?
-                <CreateTeamForm />
-                :
+            <div>
+                <h2>Teams List</h2>
                 <div>
-                    <h2>Teams List</h2>
-                    <button onClick={this.handleToggleCreateForm}>Create New Team</button>
+                    <Link to='/teams/new'>Create New Team</Link>
+                </div>
+                <div>
                     {teamsList}
                 </div>
+            </div>
         )
     }
 }

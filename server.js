@@ -51,7 +51,7 @@ app.use(express.static(`${__dirname}/client/build`))
  * the paths defined in the router.
  */
 app.use('/api/teams', teamRouter)
-app.use('/api/teams/:teamId/players', playerRouter)
+app.use('/api/players', playerRouter)
 
 /* Step 5
  *

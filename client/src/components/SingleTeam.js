@@ -56,7 +56,7 @@ export default class SingleTeam extends Component {
  
     render() {
         if (this.state.redirectToHome) {
-            return <Redirect to="/" />
+            return <Redirect to="/teams" />
         }
         return (
             this.state.isEditFormDisplayed
@@ -93,7 +93,10 @@ export default class SingleTeam extends Component {
                 <div>Scoring Format: {this.state.team.scoringFormat}</div>
                 <div>Current Record: {this.state.team.record}</div>
                 <img src={this.state.team.icon} alt="Team Icon" />
-                <Players teamId={this.state.team._id} />
+                {/* <Players teamId={this.state.team._id} /> */}
+                {/* <Link to="/:teamId/players">Manage Roster</Link> */}
+                <Link 
+                    to={`/players/${this.state.team._id}`}>Manage Roster</Link>
             </div>
         )
     }
