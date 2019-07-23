@@ -17,6 +17,7 @@ const app = express()
  *
  */
 const { teamRouter } = require('./controllers/team.js')
+const { playerRouter } = require('./controllers/player.js')
 
 
 /* Step 3

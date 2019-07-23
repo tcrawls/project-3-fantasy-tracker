@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
+import Players from './Players'
+
 
 export default class SingleTeam extends Component {
 
@@ -91,6 +93,7 @@ export default class SingleTeam extends Component {
                 <div>Scoring Format: {this.state.team.scoringFormat}</div>
                 <div>Current Record: {this.state.team.record}</div>
                 <img src={this.state.team.icon} alt="Team Icon" />
+                <Players teamId={this.state.team._id} />
             </div>
         )
     }
