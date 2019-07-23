@@ -12,7 +12,7 @@ export default class CreatePlayerForm extends Component {
             playerPosition: '',
             playerRanking: '',
             nflTeam: '',
-            teamId: this.props.teamId
+            teamId: this.props.match.params.teamId
         },
         redirectToHome: false
     }
@@ -24,7 +24,7 @@ export default class CreatePlayerForm extends Component {
     }
 
     handleSubmit = () => {
-        axios.post(`/api/teams/${this.props.teamId}/players`, this.state.player)
+        axios.post('/api/players', this.state.player)
             .then(() => {
                 this.setState({ redirectToHome: true })
             })
@@ -33,7 +33,7 @@ export default class CreatePlayerForm extends Component {
 
     render() {
         if (this.state.redirectToHome) {
-            return <Redirect to="/" />
+            return <Redirect to="/teams" />
         }
         return (
             <form onSubmit={this.handleSubmit}>

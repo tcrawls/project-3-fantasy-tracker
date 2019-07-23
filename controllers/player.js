@@ -35,7 +35,7 @@ const playerRouter = express.Router()
 /* Step 5
  *
  */
-playerRouter.get('/', (req, res) => {
+playerRouter.get('/:teamId', (req, res) => {
   playerApi.getPlayersByTeamId(req.params.teamId)
     .then((players) => {
       res.json(players)
@@ -50,7 +50,6 @@ playerRouter.get('/', (req, res) => {
 // })
 
 playerRouter.post('/', (req, res) => {
-  req.body.teamId = req.params.teamId
   playerApi.addNewPlayer(req.body)
     .then((player) => {
       res.json(player)
@@ -64,12 +63,12 @@ playerRouter.post('/', (req, res) => {
 //     })
 // })
 
-// teamRouter.delete('/:teamId', (req, res) => {
-//   teamApi.deleteTeam(req.params.teamId)
-//     .then((team) => {
-//       res.json(team)
-//     })
-// })
+playerRouter.delete('/:playerId', (req, res) => {
+  playerApi.deleteTeam(req.params.playerId)
+    .then((team) => {
+      res.json(team)
+    })
+})
 
 
 /* Step 6

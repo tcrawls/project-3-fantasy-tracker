@@ -32,7 +32,10 @@ const PlayerSchema = new mongoose.Schema({
   playerPosition: String,
   playerRanking: Number,
   nflTeam: String,
-  teamId: mongoose.Types.ObjectId
+  teamId: {
+    required: true,
+    type: mongoose.Types.ObjectId
+  }
 })
 
 /* Step 3

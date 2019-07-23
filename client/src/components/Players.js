@@ -7,7 +7,6 @@ export default class Players extends Component {
 
     state = {
         players: [],
-        isNewFormDisplayed: false
     }
 
     /* Step 4
@@ -19,18 +18,11 @@ export default class Players extends Component {
     */
 
     componentDidMount() {
-        axios.get('/api/teams/:teamId/players')
+        axios.get(`/api/players/${this.props.match.params.teamId}`)
             .then((res) => {
                 this.setState({ players: res.data })
             })
     }
-
-    handleToggleCreateForm = () => {
-        this.setState((state) => {
-            return { isNewFormDisplayed: !state.isNewFormDisplayed }
-        })
-    }
-
 
     render() {
         // let playerArray = this.state.players.filter((player) => {
@@ -45,23 +37,18 @@ export default class Players extends Component {
         //     )
         // })
 
-
         let playersList = this.state.players.map((player) => {
             return (
                 <div key={player._id}>
-                    <Link key={player._id} to={`/players/${player._id}`}>{player.firstName} {player.lastName}</Link>
+                    <Link key={player._id} to={`/players/${this.props.match.params.teamId}/singlePlayer/${player._id}`}>{player.firstName} {player.lastName}</Link>
                 </div>
             )
         })
 
         return (
-            this.state.isNewFormDisplayed
-            ?
-            <CreatePlayerForm teamId={this.props.teamId} />
-            :
                 <div>
                     <h2>Roster</h2>
-                    <button onClick={this.handleToggleCreateForm}>Add New Player</button>
+                    <Link to={`/players/${this.props.match.params.teamId}/new`}>Add New Player</Link>
                     {playersList}
                 </div>
         )
