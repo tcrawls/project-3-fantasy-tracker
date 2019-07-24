@@ -18,24 +18,13 @@ export default class Players extends Component {
     */
 
     componentDidMount() {
-        axios.get(`/api/players/${this.props.match.params.teamId}`)
+        axios.get(`/api/players/${this.props.match.params.teamId}/roster`)
             .then((res) => {
                 this.setState({ players: res.data })
             })
     }
 
     render() {
-        // let playerArray = this.state.players.filter((player) => {
-        //     return player.teamId === this.props.teamId
-        // })
-
-        // let playersList = playerArray.map((player) => {
-        //     return (
-        //         <div key={player._id}>
-        //             <Link key={player._id} to={`/players/${player._id}`}>{player.firstName} {player.lastName}</Link>
-        //         </div>
-        //     )
-        // })
 
         let playersList = this.state.players.map((player) => {
             return (

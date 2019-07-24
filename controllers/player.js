@@ -35,16 +35,17 @@ const playerRouter = express.Router()
 /* Step 5
  *
  */
-playerRouter.get('/:teamId', (req, res) => {
+playerRouter.get('/:teamId/roster', (req, res) => {
   playerApi.getPlayersByTeamId(req.params.teamId)
     .then((players) => {
       res.json(players)
     })
 })
 
-playerRouter.get('/:playerId', (req, res) => {
+playerRouter.get('/singlePlayer/:playerId', (req, res) => {
   playerApi.getSinglePlayer(req.params.playerId)
     .then((player) => {
+      console.log(player)
       res.json(player)
     })
 })

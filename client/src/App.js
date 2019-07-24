@@ -19,7 +19,7 @@ function App() {
           <Route exact path="/teams" component={Teams} />
           <Route exact path="/teams/new" component={CreateTeamForm} />
           <Route exact path="/teams/:teamId" component={SingleTeam} />
-          <Route exact path="/players/:teamId" component={Players} />
+          <Route exact path="/players/:teamId/roster" component={Players} />
           <Route exact path="/players/:teamId/new" component={CreatePlayerForm} />
           <Route exact path="/players/:teamId/singlePlayer/:playerId" component={SinglePlayer} />
 
