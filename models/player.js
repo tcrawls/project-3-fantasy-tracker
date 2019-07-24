@@ -31,11 +31,13 @@ const PlayerSchema = new mongoose.Schema({
   lastName: String,
   playerPosition: String,
   playerRanking: Number,
+  playerImage: String,
   nflTeam: String,
-  teamId: {
-    required: true,
-    type: mongoose.Types.ObjectId
-  }
+  teamId: mongoose.Types.ObjectId
+  // teamId: {
+  //   required: true,
+  //   type: mongoose.Types.ObjectId
+  // }
 })
 
 /* Step 3
@@ -60,7 +62,7 @@ function getPlayersByTeamId(teamId) {
   return PlayerCollection.find({ teamId: teamId })
 }
 
-function getPlayerByPlayerId(playerId) {
+function getSinglePlayer(playerId) {
   return PlayerCollection.findById(playerId)
 }
 
@@ -85,7 +87,7 @@ function deletePlayer(playerId) {
 module.exports = {
   getAllPlayers,
   getPlayersByTeamId,
-  getPlayerByPlayerId,
+  getSinglePlayer,
   addNewPlayer,
   updatePlayer,
   deletePlayer

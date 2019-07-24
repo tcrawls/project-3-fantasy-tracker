@@ -11,6 +11,7 @@ export default class CreatePlayerForm extends Component {
             lastName: '',
             playerPosition: '',
             playerRanking: '',
+            playerImage: '',
             nflTeam: '',
             teamId: this.props.match.params.teamId
         },
@@ -23,10 +24,14 @@ export default class CreatePlayerForm extends Component {
         this.setState({ player: copiedPlayer })
     }
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault()
         axios.post('/api/players', this.state.player)
-            .then(() => {
-                this.setState({ redirectToHome: true })
+            .then((res) => {
+                this.setState({ 
+                    player: res.data,
+                    redirectToHome: true 
+                })
             })
     }
 
@@ -56,6 +61,10 @@ export default class CreatePlayerForm extends Component {
                 <div>
                     <label htmlFor="nflTeam">NFL Team: </label>
                     <input type="text" id="nflTeam" name="nflTeam" onChange={this.handleInputChange} value={this.state.player.nflTeam} />
+                </div>
+                <div>
+                    <label htmlFor="playerImage">Image Link: </label>
+                    <input type="text" id="playerImage" name="playerImage" onChange={this.handleInputChange} value={this.state.player.playerImage} />
                 </div>
                 <input type="submit" value="Add Player" />
             </form>

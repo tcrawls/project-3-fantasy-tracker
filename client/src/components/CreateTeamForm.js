@@ -22,10 +22,14 @@ export default class CreateTeamForm extends Component {
         this.setState({ team: copiedTeam })
     }
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault()
         axios.post('/api/teams', this.state.team)
-            .then(() => {
-                this.setState({ redirectToHome: true })
+            .then((res) => {
+                this.setState({ 
+                    team: res.data,
+                    redirectToHome: true 
+                })
             })
     }
 

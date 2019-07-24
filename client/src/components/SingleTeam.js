@@ -95,8 +95,7 @@ export default class SingleTeam extends Component {
                 <img src={this.state.team.icon} alt="Team Icon" />
                 {/* <Players teamId={this.state.team._id} /> */}
                 {/* <Link to="/:teamId/players">Manage Roster</Link> */}
-                <Link 
-                    to={`/players/${this.state.team._id}`}>Manage Roster</Link>
+                <Link to={`/players/${this.state.team._id}`}>Manage Roster</Link>
             </div>
         )
     }

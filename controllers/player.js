@@ -42,12 +42,12 @@ playerRouter.get('/:teamId', (req, res) => {
     })
 })
 
-// teamRouter.get('/:teamId', (req, res) => {
-//   teamApi.getTeam(req.params.teamId)
-//     .then((team) => {
-//       res.json(team)
-//     })
-// })
+playerRouter.get('/:playerId', (req, res) => {
+  playerApi.getSinglePlayer(req.params.playerId)
+    .then((player) => {
+      res.json(player)
+    })
+})
 
 playerRouter.post('/', (req, res) => {
   playerApi.addNewPlayer(req.body)
@@ -64,9 +64,9 @@ playerRouter.post('/', (req, res) => {
 // })
 
 playerRouter.delete('/:playerId', (req, res) => {
-  playerApi.deleteTeam(req.params.playerId)
-    .then((team) => {
-      res.json(team)
+  playerApi.deletePlayer(req.params.playerId)
+    .then((player) => {
+      res.json(player)
     })
 })
 
