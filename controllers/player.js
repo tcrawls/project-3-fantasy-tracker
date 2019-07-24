@@ -64,7 +64,7 @@ playerRouter.post('/', (req, res) => {
 //     })
 // })
 
-playerRouter.delete('/:playerId', (req, res) => {
+playerRouter.delete('/delete/:playerId', (req, res) => {
   playerApi.deletePlayer(req.params.playerId)
     .then((player) => {
       res.json(player)

@@ -75,7 +75,7 @@ function updatePlayer(playerId, updatedPlayer) {
 }
 
 function deletePlayer(playerId) {
-  return TeamCollection.findByIdAndDelete(playerId)
+  return PlayerCollection.findByIdAndDelete(playerId)
 }
 
 
