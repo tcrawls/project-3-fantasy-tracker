@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { Jumbotron } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
+
+
+import LogoImage from '../background-image-field.jpg'
+
+var sectionStyle = {
+    backgroundImage: `url(${LogoImage})`
+}
 
 export default class Teams extends Component {
 
@@ -27,19 +37,29 @@ export default class Teams extends Component {
         let teamsList = this.state.teams.map((team) => {
             return (
                 <div key={team._id}>
-                    <Link key={team._id} to={`/teams/${team._id}`}>{team.name}</Link>
+                    <ListGroup.Item>
+                        <Link key={team._id} to={`/teams/${team._id}`}>{team.name}</Link>
+                    </ListGroup.Item>
                 </div>
             )
         })
+
         return (
+
             <div>
+                <div style={sectionStyle}>
+                    <Jumbotron className="Jumbotron">
+                        <h1>Fantasy Tracker</h1>
+                        <p>Manage your fantasy rosters. Optimize your lineups. Track player performance. All in one place.</p>
+                        <p>
+                            <Button variant="primary" href='/teams/new'>Create New Team</Button>
+                        </p>
+                    </Jumbotron>
+                </div>
                 <h2>Teams List</h2>
-                <div>
-                    <Link to='/teams/new'>Create New Team</Link>
-                </div>
-                <div>
+                <ListGroup>
                     {teamsList}
-                </div>
+                </ListGroup>
             </div>
         )
     }
