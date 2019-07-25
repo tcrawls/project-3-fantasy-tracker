@@ -18,8 +18,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-
-
         <Navbar bg="light" expand="lg">
           <Navbar.Brand href="/teams">Fantasy Tracker</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
