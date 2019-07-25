@@ -1,34 +1,17 @@
-/* 
- * Place all functions, classes, and/or DB schemas here for a single 
- * model.
- */
-/* Step 1
- *
- * TODO: import mongoose connection
- */
 const mongoose = require('./connection.js')
 
-/* Step 2
- *
- * TODO: create model schema 
- * NOTE: skip this if you are not using mongoose
- */
-
- const TeamSchema = new mongoose.Schema({
-    name: String,
-    platform: String,
-    scoringFormat: String,
-    record: String,
-    icon: String
+const TeamSchema = new mongoose.Schema({
+  name: String,
+  platform: String,
+  scoringFormat: String,
+  record: String,
+  icon: String
 })
 
-/* Step 3
- *
- * TODO: create collection API
- */
+const TeamCollection = mongoose.model('Team', TeamSchema)
 
- const TeamCollection = mongoose.model('Team', TeamSchema)
 
+// TEAM MODEL FUNCTIONS
 
 function getAllTeams() {
   return TeamCollection.find()
@@ -50,11 +33,7 @@ function deleteTeam(teamId) {
   return TeamCollection.findByIdAndDelete(teamId)
 }
 
-/* Step 5
- *
- * TODO: export all functions from this file by adding their names as keys to this
- * object
- */
+
 module.exports = {
   getAllTeams,
   getTeam,
