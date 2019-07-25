@@ -9,14 +9,6 @@ export default class Players extends Component {
         players: [],
     }
 
-    /* Step 4
-    * Use componentDidMount to retrieve any data to display
-    *   Here you can make calls to your local express server
-    *   or to an external API
-    *   setState can be run here as well
-    *   -REMINDER remember `setState` it is an async function
-    */
-
     componentDidMount() {
         axios.get(`/api/players/${this.props.match.params.teamId}/roster`)
             .then((res) => {
@@ -35,11 +27,11 @@ export default class Players extends Component {
         })
 
         return (
-                <div>
-                    <h2>Roster</h2>
-                    <Link to={`/players/${this.props.match.params.teamId}/new`}>Add New Player</Link>
-                    {playersList}
-                </div>
+            <div>
+                <h2>Roster</h2>
+                <Link to={`/players/${this.props.match.params.teamId}/new`}>Add New Player</Link>
+                {playersList}
+            </div>
         )
     }
 }

@@ -24,11 +24,6 @@ export default class Teams extends Component {
             })
     }
 
-    // handleToggleCreateForm = () => {
-    //     this.setState((state) => {
-    //         return { isNewFormDisplayed: !state.isNewFormDisplayed }
-    //     })
-    // }
 
     render() {
         let teamsList = this.state.teams.map((team) => {

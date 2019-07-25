@@ -38,7 +38,7 @@ export default class CreatePlayerForm extends Component {
 
     render() {
         if (this.state.redirectToHome) {
-            return <Redirect to="/teams" />
+            return <Redirect to={`/players/${this.props.match.params.teamId}/roster`} />
         }
         return (
             <form onSubmit={this.handleSubmit}>
