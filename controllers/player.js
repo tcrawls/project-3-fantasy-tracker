@@ -45,7 +45,6 @@ playerRouter.get('/:teamId/roster', (req, res) => {
 playerRouter.get('/singlePlayer/:playerId', (req, res) => {
   playerApi.getSinglePlayer(req.params.playerId)
     .then((player) => {
-      console.log(player)
       res.json(player)
     })
 })
@@ -57,12 +56,12 @@ playerRouter.post('/', (req, res) => {
     })
 })
 
-// teamRouter.put('/:teamId', (req, res) => {
-//   teamApi.updateTeam(req.params.teamId, req.body)
-//     .then((team) => {
-//       res.json(team)
-//     })
-// })
+playerRouter.put('/edit/:playerId', (req, res) => {
+  playerApi.updatePlayer(req.params.playerId, req.body)
+    .then((player) => {
+      res.json(player)
+    })
+})
 
 playerRouter.delete('/delete/:playerId', (req, res) => {
   playerApi.deletePlayer(req.params.playerId)
