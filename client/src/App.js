@@ -14,9 +14,21 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div><Link to="/teams">Home</Link></div>
+
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Fantasy Tracker</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><Link to="/teams">Home</Link></li>
+              <li><Link to="#">About</Link></li>
+              <li><Link to="#">Scoreboard</Link></li>
+            </ul>
+          </div>
+        </nav>
+
+        {/* <div><Link to="/teams">Home</Link></div>
         <div><Link to="#">About</Link></div>
-        <h1>Fantasy Tracker</h1>
+        <h1>Fantasy Tracker</h1> */}
         <Switch>
           <Route exact path="/teams" component={Teams} />
           <Route exact path="/teams/new" component={CreateTeamForm} />

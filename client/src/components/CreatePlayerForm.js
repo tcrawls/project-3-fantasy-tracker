@@ -15,7 +15,7 @@ export default class CreatePlayerForm extends Component {
             nflTeam: '',
             teamId: this.props.match.params.teamId
         },
-        redirectToHome: false
+        redirectToPlayerPage: false
     }
 
     handleInputChange = (event) => {
@@ -28,16 +28,15 @@ export default class CreatePlayerForm extends Component {
         event.preventDefault()
         axios.post('/api/players', this.state.player)
             .then((res) => {
-                this.setState({ 
+                this.setState({
                     player: res.data,
-                    redirectToHome: true 
+                    redirectToPlayerPage: true
                 })
             })
     }
 
-
     render() {
-        if (this.state.redirectToHome) {
+        if (this.state.redirectToPlayerPage) {
             return <Redirect to={`/players/${this.props.match.params.teamId}/roster`} />
         }
         return (

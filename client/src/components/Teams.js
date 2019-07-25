@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import CreateTeamForm from './CreateTeamForm'
 import { Link } from 'react-router-dom'
 
 export default class Teams extends Component {
@@ -24,7 +23,6 @@ export default class Teams extends Component {
             })
     }
 
-
     render() {
         let teamsList = this.state.teams.map((team) => {
             return (
@@ -33,7 +31,6 @@ export default class Teams extends Component {
                 </div>
             )
         })
-
         return (
             <div>
                 <h2>Teams List</h2>
