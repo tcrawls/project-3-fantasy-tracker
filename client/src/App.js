@@ -8,23 +8,38 @@ import CreateTeamForm from './components/CreateTeamForm.js'
 import CreatePlayerForm from './components/CreatePlayerForm.js'
 import EditPlayerForm from './components/EditPlayerForm.js'
 import EditTeamForm from './components/EditTeamForm.js'
-import './App.css';
+import './App.css'
+import { Navbar } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
+
+
 
 function App() {
   return (
     <div className="App">
       <Router>
 
-        <nav>
+
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="/teams">Fantasy Tracker</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="#">Scoreboard</Nav.Link>
+              <Nav.Link href="#">About</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+
+        {/* <nav>
           <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Fantasy Tracker</a>
+            <Link to="/teams">Fantasy Tracker</Link>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><Link to="/teams">Home</Link></li>
               <li><Link to="#">About</Link></li>
               <li><Link to="#">Scoreboard</Link></li>
             </ul>
           </div>
-        </nav>
+        </nav> */}
 
         {/* <div><Link to="/teams">Home</Link></div>
         <div><Link to="#">About</Link></div>
