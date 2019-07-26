@@ -25,6 +25,7 @@ export default class Teams extends Component {
                 <div key={team._id}>
                     <ListGroup.Item>
                         <Link key={team._id} to={`/teams/${team._id}`}>{team.name}</Link>
+                        <td>Record: {team.record}</td>
                     </ListGroup.Item>
                 </div>
             )
@@ -33,12 +34,18 @@ export default class Teams extends Component {
         return (
 
             <div>
-                <Jumbotron style={{ backgroundImage: `url(${BgImage})`, backgroundSize: 'cover' }}>
-                        <h1 className="ml-1">Fantasy Tracker</h1>
-                    <p>Manage your fantasy rosters. Optimize your lineups. Track player performance. All in one place.</p>
-                    <p>
-                        <Button variant="primary" href='/teams/new'>Create New Team</Button>
-                    </p>
+                <Jumbotron style={{ 
+                    backgroundImage: `url(${BgImage})`, 
+                    backgroundSize: 'cover', 
+                    color: 'white' }}
+                    >
+                    <h1 className="display-4">Fantasy Tracker</h1>
+                    <p className="lead">Manage your fantasy rosters. Track player performance. All in one place.</p>
+                    {/* <hr className="my-4"></hr> */}
+                    {/* <p>Some text included here</p> */}
+                        <div><Button variant="primary" href='/teams/new'>Create New Team</Button></div>
+                        {/* <p>OR</p>
+                        <div><Button variant="primary" href='/teams/new'>Create New Team</Button></div> */}
                 </Jumbotron>
 
                 <h2>Teams List</h2>

@@ -32,7 +32,6 @@
   }
 }
 
-.Jumbotron {
-  background-image: "https://d1mua5vq38hnzr.cloudfront.net/home-bg-mlb.jpg";
-  /* background-color: lightgreen; */
+h2 {
+  padding-left: 10px;
 }
