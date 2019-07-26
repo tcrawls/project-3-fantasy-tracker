@@ -42,6 +42,7 @@ export default class SingleTeam extends Component {
                 <tr key={player._id}>
                     <td>{player.firstName} {player.lastName}</td>
                     <td>{player.playerPosition}</td>
+                    <td>{player.nflTeam}</td>
                 </tr>
             )
         })
@@ -70,16 +71,24 @@ export default class SingleTeam extends Component {
                             <div><Button onClick={this.handleDeleteTeam} variant="secondary">Delete Team</Button></div>
                         </div>
                     </div>
-
                 </Jumbotron>
-                
 
-                <h2>Player Roster</h2>
-                <Link to={`/players/${this.state.team._id}/roster`}>Go To Roster Manager</Link>
 
-                <table>
+                <h2>Current Roster</h2>
+                <Button href={`/players/${this.state.team._id}/roster`} variant="secondary">Go To Roster Manager</Button>
+
+                <table className="table">
+                    {/* <thread>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Review</th>
+                        </tr>
+                    </thread> */}
                     <tbody>
-                    {playersList}
+                        
+                        {playersList}
+                        
                     </tbody>
                 </table>
             </div>
@@ -94,7 +103,7 @@ export default class SingleTeam extends Component {
             //     <div>Scoring Format: {this.state.team.scoringFormat}</div>
             //     <div>Current Record: {this.state.team.record}</div>
             //     <div>
-                    // <Link to={`/players/${this.state.team._id}/roster`}>Manage Roster</Link>
+            // <Link to={`/players/${this.state.team._id}/roster`}>Manage Roster</Link>
             //     </div>
             //     <img src={this.state.team.icon} alt="Team Icon" />
             // </div>

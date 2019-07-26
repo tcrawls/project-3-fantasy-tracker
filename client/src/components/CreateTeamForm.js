@@ -38,29 +38,49 @@ export default class CreateTeamForm extends Component {
             return <Redirect to="/teams" />
         }
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div>
-                    <label htmlFor="team-name">Team Name: </label>
-                    <input type="text" id="team-name" name="name" onChange={this.handleInputChange} value={this.state.team.name} />
-                </div>
-                <div>
-                    <label htmlFor="platform">Platform: </label>
-                    <input type="text" id="platform" name="platform" onChange={this.handleInputChange} value={this.state.team.platform} />
-                </div>
-                <div>
-                    <label htmlFor="scoringFormat">Scoring Format: </label>
-                    <input type="text" id="scoringFormat" name="scoringFormat" onChange={this.handleInputChange} value={this.state.team.scoringFormat} />
-                </div>
-                <div>
-                    <label htmlFor="record">Current Record: </label>
-                    <input type="string" id="record" name="record" onChange={this.handleInputChange} value={this.state.team.record} />
-                </div>
-                <div>
-                    <label htmlFor="icon">Icon Image: </label>
-                    <input type="text" id="icon" name="icon" onChange={this.handleInputChange} value={this.state.team.icon} />
-                </div>
-                <input type="submit" value="Create Team" />
-            </form>
+            <div className="form-body">
+                <h1 className="display-4 create-title">Create New Team</h1>
+                <form onSubmit={this.handleSubmit}>
+                    <div className="create-team form-fields">
+                        <div className="form-group">
+                            <label htmlFor="team-name">Team Name: </label>
+                            <input className="form-control" type="text" id="team-name" name="name" onChange={this.handleInputChange} value={this.state.team.name} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="platform">Platform: </label>
+                            <select className="form-control" type="text" id="platform" name="platform" onChange={this.handleInputChange} value={this.state.team.platform}>
+                                <option>--Select--</option>
+                                <option>ESPN</option>
+                                <option>Yahoo</option>
+                                <option>NFL.com</option>
+                                <option>CBS</option>
+                                <option>Fox Sports</option>
+                                <option>FanDuel</option>
+                                <option>DraftKings</option>
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="scoringFormat">Scoring Format: </label>
+                            <select className="form-control" type="text" id="scoringFormat" name="scoringFormat" onChange={this.handleInputChange} value={this.state.team.scoringFormat}>
+                                <option>--Select--</option>
+                                <option>Standard</option>
+                                <option>PPR</option>
+                                <option>Half PPR</option>
+                                <option>Custom</option>
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="record">Current Record: </label>
+                            <input className="form-control" type="string" id="record" name="record" onChange={this.handleInputChange} value={this.state.team.record} />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="icon">Icon Image: </label>
+                            <input className="form-control" type="text" id="icon" name="icon" onChange={this.handleInputChange} value={this.state.team.icon} />
+                        </div>
+                        <input type="submit" value="Create Team" className="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
         )
     }
 }

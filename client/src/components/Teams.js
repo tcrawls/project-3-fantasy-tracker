@@ -44,7 +44,7 @@ export default class Teams extends Component {
                         <h1 className="display-4">Fantasy Tracker</h1>
                         <p className="lead">Manage your fantasy rosters. Track player performance. All in one place.</p>
 
-                        <div><Button variant="primary" href='/teams/new'>Create New Team</Button></div>
+                        <div><Button variant="primary" size="lg" href='/teams/new'>Create New Team</Button></div>
                     </Jumbotron>
                 </div>
                 <div>
