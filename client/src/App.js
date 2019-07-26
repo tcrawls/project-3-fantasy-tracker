@@ -11,6 +11,11 @@ import EditTeamForm from './components/EditTeamForm.js'
 import './App.css'
 import { Navbar } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
+import { Jumbotron } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
+import BgImage from './background-image-field.jpg'
+import HomePage from './components/HomePage'
+
 
 
 
@@ -20,7 +25,7 @@ function App() {
       <Router>
         
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="/teams">Fantasy Tracker</Navbar.Brand>
+          <Navbar.Brand href="/">Fantasy Tracker</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -30,7 +35,23 @@ function App() {
           </Navbar.Collapse>
         </Navbar>
 
+        {/* <div>
+                <Jumbotron style={{
+                    backgroundImage: `url(${BgImage})`,
+                    backgroundSize: 'cover',
+                    color: 'white'
+                }}
+                >
+                    <h1 className="display-4">Fantasy Tracker</h1>
+                    <p className="lead">Manage your fantasy rosters. Track player performance. All in one place.</p>
+           
+                    <div><Button variant="primary" href='/teams/new'>Create New Team</Button></div>
+                    
+                </Jumbotron>
+                </div> */}
+
         <Switch>
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/teams" component={Teams} />
           <Route exact path="/teams/new" component={CreateTeamForm} />
           <Route exact path="/teams/:teamId" component={SingleTeam} />
