@@ -18,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        
         <Navbar bg="light" expand="lg">
           <Navbar.Brand href="/teams">Fantasy Tracker</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -29,19 +30,6 @@ function App() {
           </Navbar.Collapse>
         </Navbar>
 
-        {/* <nav>
-          <div class="nav-wrapper">
-            <Link to="/teams">Fantasy Tracker</Link>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><Link to="#">About</Link></li>
-              <li><Link to="#">Scoreboard</Link></li>
-            </ul>
-          </div>
-        </nav> */}
-
-        {/* <div><Link to="/teams">Home</Link></div>
-        <div><Link to="#">About</Link></div>
-        <h1>Fantasy Tracker</h1> */}
         <Switch>
           <Route exact path="/teams" component={Teams} />
           <Route exact path="/teams/new" component={CreateTeamForm} />
