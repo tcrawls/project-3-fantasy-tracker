@@ -42,6 +42,7 @@ export default class Teams extends Component {
                 }}
                 >
                     <h1 className="display-4">Fantasy Tracker</h1>
+                    <h2>SAMPLE</h2>
                     <p className="lead">Manage your fantasy rosters. Track player performance. All in one place.</p>
                     {/* <hr className="my-4"></hr> */}
                     {/* <p>Some text included here</p> */}
