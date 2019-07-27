@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        
+
         <Navbar bg="light" expand="lg">
           <Navbar.Brand href="/">Fantasy Tracker</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -63,6 +63,13 @@ function App() {
 
         </Switch>
       </Router>
+      <footer class="page-footer teal">
+        <div class="footer-copyright">
+          <div class="container">
+            Made by <a class="brown-text text-lighten-3" href="#">Thompson Rawls</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
