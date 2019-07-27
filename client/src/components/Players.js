@@ -19,34 +19,43 @@ export default class Players extends Component {
     render() {
         let playersList = this.state.players.map((player) => {
             return (
-                <div key={player._id}>
-                    <tr>
-                        <td><Link key={player._id} to={`/players/${this.props.match.params.teamId}/singlePlayer/${player._id}`}>{player.firstName} {player.lastName}</Link></td>
-                        <td>{player.nflTeam}</td>
-                        <td>{player.playerPosition}</td>
-                        <td>{player.playerRanking}</td>
-                    </tr>
-                </div>
+                <tr key={player._id}>
+                    <td className="roster-listItem"><Link to={`/players/${this.props.match.params.teamId}/singlePlayer/${player._id}`}>{player.firstName} {player.lastName}</Link></td>
+                    <td className="roster-listItem">{player.playerPosition}</td>
+                    <td className="roster-listItem">{player.playerRanking}</td>
+                    <td className="roster-listItem">{player.nflTeam}</td>
+                </tr>
             )
         })
         return (
+     
+                
             <div className="container">
-                <h2>Roster</h2>
-                <Link to={`/players/${this.props.match.params.teamId}/new`}>Add New Player</Link>
+               
+
+                <div className="roster-list">
+                <h1 className="display-4">Current Roster</h1>
+
+                    <div className="roster-button">
+                        
+                    <a class="waves-effect waves-light btn-large roster-button" href={`/players/${this.props.match.params.teamId}/new`}>Add New Player</a>
+                    </div>
+
                 <table className="table">
-                    <thread>
-                        <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Position</th>
-                            <th>NFL Team</th>
-                            <th>Current Ranking</th>
-                        </tr>
-                    </thread>
-                    <tbody>
-                        {playersList}
-                    </tbody>
-                </table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Position Ranking</th>
+                                <th>NFL Team</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {playersList}
+                        </tbody>
+                    </table>
+
+            </div>
             </div>
         )
     }

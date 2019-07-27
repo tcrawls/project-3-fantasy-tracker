@@ -40,9 +40,10 @@ export default class SingleTeam extends Component {
         let playersList = this.state.players.map((player) => {
             return (
                 <tr key={player._id}>
-                    <td>{player.firstName} {player.lastName}</td>
-                    <td>{player.playerPosition}</td>
-                    <td>{player.nflTeam}</td>
+                    <td className="roster-listItem">{player.firstName} {player.lastName}</td>
+                    <td className="roster-listItem">{player.playerPosition}</td>
+                    <td className="roster-listItem">{player.playerRanking}</td>
+                    <td className="roster-listItem">{player.nflTeam}</td>
                 </tr>
             )
         })
@@ -67,47 +68,35 @@ export default class SingleTeam extends Component {
                             <div className="lead text"><b>Current Record:</b> {this.state.team.record}</div>
                             <div className="lead text"><b>Scoring Format:</b> {this.state.team.scoringFormat}</div>
                             <div className="lead text"><b>Platform:</b> {this.state.team.platform}</div>
-                            <div><Button href={`/teams/${this.state.team._id}/edit`} variant="primary">Edit Team Info</Button></div>
-                            <div><Button onClick={this.handleDeleteTeam} variant="secondary">Delete Team</Button></div>
+                            <div className="team-button-container">
+                                <div className="team-button"><Button href={`/teams/${this.state.team._id}/edit`} variant="primary">Edit Team Info</Button></div>
+                                <div className="team-button"><Button onClick={this.handleDeleteTeam} variant="secondary">Delete Team</Button></div>
+                            </div>
+                            
                         </div>
                     </div>
                 </Jumbotron>
 
-
-                <h2>Current Roster</h2>
-                <Button href={`/players/${this.state.team._id}/roster`} variant="secondary">Go To Roster Manager</Button>
-
-                <table className="table">
-                    {/* <thread>
-                        <tr>
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Review</th>
-                        </tr>
-                    </thread> */}
-                    <tbody>
+                <div className="roster-list">
+                    <div className="roster-button">
                         
-                        {playersList}
-                        
-                    </tbody>
-                </table>
+                    <a class="waves-effect waves-light btn-large roster-button" href={`/players/${this.state.team._id}/roster`}>Go To Roster Manager</a>
+                    </div>
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Position Ranking</th>
+                                <th>NFL Team</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {playersList}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
-
-
-            // <div>
-            //     <h2>{this.state.team.name}</h2>
-            //     <Link to={`/teams/${this.state.team._id}/edit`}>Edit Team</Link>
-            //     <button onClick={this.handleDeleteTeam}>Delete Team</button>
-            //     <div>Platform: {this.state.team.platform}</div>
-            //     <div>Scoring Format: {this.state.team.scoringFormat}</div>
-            //     <div>Current Record: {this.state.team.record}</div>
-            //     <div>
-            // <Link to={`/players/${this.state.team._id}/roster`}>Manage Roster</Link>
-            //     </div>
-            //     <img src={this.state.team.icon} alt="Team Icon" />
-            // </div>
-
         )
     }
 }
