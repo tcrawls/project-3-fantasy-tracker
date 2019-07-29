@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { ListGroup } from 'react-bootstrap';
 
 export default class Players extends Component {
 
@@ -28,20 +27,17 @@ export default class Players extends Component {
             )
         })
         return (
-     
-                
             <div className="container">
-               
-
+                <Link to={`/teams/${this.props.match.params.teamId}`}>Back to Team Page</Link>
                 <div className="roster-list">
-                <h1 className="display-4">Current Roster</h1>
+                    <h1 className="display-4">Roster Manager</h1>
 
                     <div className="roster-button">
-                        
-                    <a class="waves-effect waves-light btn-large roster-button" href={`/players/${this.props.match.params.teamId}/new`}>Add New Player</a>
+
+                        <a class="waves-effect waves-light btn-large roster-button" href={`/players/${this.props.match.params.teamId}/new`}>Add New Player</a>
                     </div>
 
-                <table className="table">
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -55,7 +51,7 @@ export default class Players extends Component {
                         </tbody>
                     </table>
 
-            </div>
+                </div>
             </div>
         )
     }

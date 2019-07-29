@@ -96,6 +96,7 @@ h2 {
   text-align: center;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 20px;
 } 
 
 .roster-listItem {
@@ -115,6 +116,7 @@ h2 {
 
 .roster-button {
   margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 .list-group {
@@ -155,6 +157,11 @@ h2 {
 .create-team {
   margin-top: 10px;
   width: 220px;
+}
+
+.playerPage {
+  margin: 10px auto;
+  text-align: center;
 }
 
 /* .parallax-container {
