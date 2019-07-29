@@ -31,12 +31,9 @@ export default class Players extends Component {
                 <Link to={`/teams/${this.props.match.params.teamId}`}>Back to Team Page</Link>
                 <div className="roster-list">
                     <h1 className="display-4">Roster Manager</h1>
-
                     <div className="roster-button">
-
                         <a class="waves-effect waves-light btn-large roster-button" href={`/players/${this.props.match.params.teamId}/new`}>Add New Player</a>
                     </div>
-
                     <table className="table">
                         <thead>
                             <tr>
@@ -50,7 +47,6 @@ export default class Players extends Component {
                             {playersList}
                         </tbody>
                     </table>
-
                 </div>
             </div>
         )

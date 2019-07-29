@@ -31,7 +31,6 @@ export default class Teams extends Component {
                 </ListGroup.Item>
             )
         })
-
         return (
             <div>
                 <div>

@@ -43,12 +43,10 @@ export default class SingleTeam extends Component {
                 </tr>
             )
         })
-
         if (this.state.redirectToHome) {
             return <Redirect to="/teams" />
         }
         return (
-
             <div>
                 <Link to={`/teams`}>Back to Teams</Link>
                 <Jumbotron style={{
@@ -73,10 +71,8 @@ export default class SingleTeam extends Component {
                         </div>
                     </div>
                 </Jumbotron>
-
                 <div className="roster-list">
                     <div className="roster-button">
-
                         <a class="waves-effect waves-light btn-large roster-button" href={`/players/${this.state.team._id}/roster`}>Go To Roster Manager</a>
                     </div>
                     <table className="table">

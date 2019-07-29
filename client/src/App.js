@@ -18,7 +18,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-
         <Navbar bg="light" expand="lg">
           <Navbar.Brand href="/">Fantasy HQ</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -39,7 +38,6 @@ function App() {
           <Route exact path="/players/:teamId/new" component={CreatePlayerForm} />
           <Route exact path="/players/:teamId/singlePlayer/:playerId" component={SinglePlayer} />
           <Route exact path="/players/:teamId/singlePlayer/:playerId/edit" component={EditPlayerForm} />
-
         </Switch>
       </Router>
     </div>
