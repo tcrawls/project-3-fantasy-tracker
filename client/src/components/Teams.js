@@ -29,7 +29,7 @@ export default class Teams extends Component {
                         <td>Record: {team.record}</td>
                         <td>Platform: {team.platform}</td>
                         <td>Format: {team.scoringFormat}</td>
-                        <a class="waves-effect waves-light btn view-team" href={`/teams/${team._id}`}>View Team Page</a>
+                        <td><a class="waves-effect waves-light btn view-team" href={`/teams/${team._id}`}>View Team Page</a></td>
                     </ListGroup.Item>
                 // </div>
             )
@@ -43,11 +43,16 @@ export default class Teams extends Component {
                         backgroundSize: 'cover',
                         color: 'white',
                         textAlign: 'center',
+                        paddingBottom: '5px',
                     }}
                     >
-                        <h1 className="display-4">Fantasy Tracker</h1>
-                        <p className="lead">Manage your fantasy rosters. Track player performance. All in one place.</p>
-                        <a class="waves-effect waves-light btn-large" href='/teams/new'>Create New Team</a>
+                        <h1 className="display-4">Fantasy HQ</h1>
+                        {/* <p className="lead">Add your fantasy team here:</p> */}
+                        <a class="waves-effect waves-light btn-large create-team" href='/teams/new'>Create New Team</a>
+                        <div className="teams-description">
+                            <p className="lead"><b>OR</b></p> 
+                            <p className="lead"><b>select a team from the list below:</b></p>
+                        </div>
                     </Jumbotron>
                 </div>
                 <div>

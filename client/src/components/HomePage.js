@@ -20,8 +20,8 @@ export default class HomePage extends Component {
                     fontWeight: 'bold',
                 }}
                 >
-                    <h1 className="display-4">Fantasy Tracker</h1>
-                    <p className="lead">Manage your fantasy rosters. Track player performance. All in one place.</p>
+                    <h1 className="display-4">Fantasy HQ</h1>
+                    <p className="lead">Manage fantasy rosters. Track player performance. All in one place.</p>
                     <a class="waves-effect waves-light btn-large" href='/teams'>Get Started</a>
                 </Jumbotron>
             </div>

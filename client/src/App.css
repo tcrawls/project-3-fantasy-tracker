@@ -118,7 +118,7 @@ h2 {
 }
 
 .list-group {
-  width: 600px;
+  width: 720px;
   margin: 10px auto;
 }
 
@@ -126,7 +126,7 @@ h2 {
   margin-top: 10px;
   display: grid;
   grid-template-rows: 30px 30px 30px 30px;
-  grid-template-columns: 200px 400px;
+  grid-template-columns: 240px 240px 240px;
 }
 
 .icon {
@@ -145,7 +145,16 @@ h2 {
 }
 
 .view-team {
-  width: 200px;
+  width: 160px;
+}
+
+.teams-description {
+  margin-top: 15px;
+}
+
+.create-team {
+  margin-top: 10px;
+  width: 220px;
 }
 
 /* .parallax-container {

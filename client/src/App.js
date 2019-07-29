@@ -25,7 +25,7 @@ function App() {
       <Router>
 
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="/">Fantasy Tracker</Navbar.Brand>
+          <Navbar.Brand href="/">Fantasy HQ</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
