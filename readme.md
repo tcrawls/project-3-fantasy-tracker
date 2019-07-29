@@ -13,13 +13,14 @@ The objective of Project 3 was to build a fully-functional web application using
 For the current version (version 1), my goal was to build the core functionality that would enable users to add/edit teams as well as individual player info. Future versions will focus on incorporating external data sources to allow for automatic team/player updates and performance tracking (see "Future Development" below).
 
 ## ERD
+https://drive.google.com/open?id=0B6vqeu7iFNpGeUhvUERTTklPQXFFTHBpcnNEOUlBbHpoUUl3
 
 ![alt text](https://drive.google.com/open?id=0B6vqeu7iFNpGeUhvUERTTklPQXFFTHBpcnNEOUlBbHpoUUl3 "ERD Screenshot")
 
 ## Wireframes
 
-![alt text](https://drive.google.com/open?id=0B6vqeu7iFNpGcDVzdzhGZmU3RXZTSnhMLUJRMTZUdjFyRmpB "Wireframe-1 Screenshot")
-![alt text](https://drive.google.com/open?id=0B6vqeu7iFNpGcjNuZGZLWlVYZnFfcjNDY0xzU0wwc2lLeGpN "Wireframe-2 Screenshot")
+https://drive.google.com/open?id=0B6vqeu7iFNpGcDVzdzhGZmU3RXZTSnhMLUJRMTZUdjFyRmpB 
+https://drive.google.com/open?id=0B6vqeu7iFNpGcjNuZGZLWlVYZnFfcjNDY0xzU0wwc2lLeGpN 
 
 
 ## Technologies/Libraries Used
