@@ -15,13 +15,10 @@ For the current version (version 1), my goal was to build the core functionality
 ## ERD
 https://drive.google.com/open?id=0B6vqeu7iFNpGeUhvUERTTklPQXFFTHBpcnNEOUlBbHpoUUl3
 
-![alt text](https://drive.google.com/open?id=0B6vqeu7iFNpGeUhvUERTTklPQXFFTHBpcnNEOUlBbHpoUUl3 "ERD Screenshot")
-
 ## Wireframes
 
 https://drive.google.com/open?id=0B6vqeu7iFNpGcDVzdzhGZmU3RXZTSnhMLUJRMTZUdjFyRmpB 
 https://drive.google.com/open?id=0B6vqeu7iFNpGcjNuZGZLWlVYZnFfcjNDY0xzU0wwc2lLeGpN 
-
 
 ## Technologies/Libraries Used
 
