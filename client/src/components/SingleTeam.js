@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
-import { Jumbotron, ListGroup } from 'react-bootstrap'
+import { Jumbotron } from 'react-bootstrap'
 import BgImage from '../background-image-field.jpg'
 import { Button } from 'react-bootstrap';
-
-import { Row } from 'react-bootstrap'
-import { Col } from 'react-bootstrap'
-
 
 
 export default class SingleTeam extends Component {
@@ -54,6 +50,7 @@ export default class SingleTeam extends Component {
         return (
 
             <div>
+                <Link to={`/teams`}>Back to Teams</Link>
                 <Jumbotron style={{
                     backgroundImage: `url(${BgImage})`,
                     backgroundSize: 'cover',
@@ -71,17 +68,16 @@ export default class SingleTeam extends Component {
                             <div className="team-button-container">
                                 <div className="team-button"><Button href={`/teams/${this.state.team._id}/edit`} variant="primary">Edit Team Info</Button></div>
                                 <div className="team-button"><Button onClick={this.handleDeleteTeam} variant="secondary">Delete Team</Button></div>
-                                {/* <div className="team-button"><a className="waves-effect waves-light btn-large roster-button" href={`/players/${this.state.team._id}/roster`}>Go To Roster Manager</a></div> */}
                             </div>
-                            
+
                         </div>
                     </div>
                 </Jumbotron>
 
                 <div className="roster-list">
                     <div className="roster-button">
-                        
-                    <a class="waves-effect waves-light btn-large roster-button" href={`/players/${this.state.team._id}/roster`}>Go To Roster Manager</a>
+
+                        <a class="waves-effect waves-light btn-large roster-button" href={`/players/${this.state.team._id}/roster`}>Go To Roster Manager</a>
                     </div>
                     <table className="table">
                         <thead>

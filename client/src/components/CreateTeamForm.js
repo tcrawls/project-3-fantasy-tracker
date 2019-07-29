@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 
 export default class CreateTeamForm extends Component {
@@ -39,6 +39,7 @@ export default class CreateTeamForm extends Component {
         }
         return (
             <div className="form-body">
+                <Link to={`/teams`}>Back to Teams</Link>
                 <h1 className="display-4 create-title">Create New Team</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="create-team form-fields">

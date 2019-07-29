@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
-import { Image } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 
 export default class SinglePlayer extends Component {
@@ -33,19 +33,16 @@ export default class SinglePlayer extends Component {
         }
         return (
             <div>
-                <h2>Single Player Page</h2>
-
-                <h2>{this.state.player.firstName} {this.state.player.lastName}</h2>
-                <Link to={`/players/${this.state.player.teamId}/singlePlayer/${this.props.match.params.playerId}/edit`}>Edit Player</Link>
-                {/* <button onClick={this.handleEditPlayer}>Edit Player</button> */}
-                <button onClick={this.handleDeletePlayer}>Delete Player</button>
-                <div>NFL Team: {this.state.player.nflTeam}</div>
-                <div>Position: {this.state.player.playerPosition}</div>
-                <div>Ranking: {this.state.player.playerRanking}</div>
-                <img src={this.state.player.playerImage} alt="Player Image" />
-                {/* <Players teamId={this.state.team._id} /> */}
-                {/* <Link to="/:teamId/players">Manage Roster</Link> */}
-
+                <Link to={`/players/${this.state.player.teamId}/roster`}>Back to Player Roster</Link>
+                <div class="playerPage">
+                    <h2>{this.state.player.firstName} {this.state.player.lastName}</h2>
+                    <Button href={`/players/${this.state.player.teamId}/singlePlayer/${this.props.match.params.playerId}/edit`} variant="primary">Edit Player</Button>
+                    <button onClick={this.handleDeletePlayer}>Delete Player</button>
+                    <div>NFL Team: {this.state.player.nflTeam}</div>
+                    <div>Position: {this.state.player.playerPosition}</div>
+                    <div>Ranking: {this.state.player.playerRanking}</div>
+                    <img src={this.state.player.playerImage} alt="Player Image" />
+                </div>
             </div>
         )
     }
