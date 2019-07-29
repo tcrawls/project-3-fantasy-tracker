@@ -71,6 +71,7 @@ export default class SingleTeam extends Component {
                             <div className="team-button-container">
                                 <div className="team-button"><Button href={`/teams/${this.state.team._id}/edit`} variant="primary">Edit Team Info</Button></div>
                                 <div className="team-button"><Button onClick={this.handleDeleteTeam} variant="secondary">Delete Team</Button></div>
+                                {/* <div className="team-button"><a className="waves-effect waves-light btn-large roster-button" href={`/players/${this.state.team._id}/roster`}>Go To Roster Manager</a></div> */}
                             </div>
                             
                         </div>

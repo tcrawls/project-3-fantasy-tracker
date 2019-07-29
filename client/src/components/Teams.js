@@ -22,13 +22,16 @@ export default class Teams extends Component {
     render() {
         let teamsList = this.state.teams.map((team) => {
             return (
-                <div key={team._id}>
+                // <div key={team._id}>
                     <ListGroup.Item>
                         <img className="icon rounded-circle" src={team.icon} alt="Team Icon" />
-                        <Link key={team._id} to={`/teams/${team._id}`}>{team.name}</Link>
+                        <td className="team-name"><Link key={team._id} to={`/teams/${team._id}`}>{team.name}</Link></td>
                         <td>Record: {team.record}</td>
+                        <td>Platform: {team.platform}</td>
+                        <td>Format: {team.scoringFormat}</td>
+                        <a class="waves-effect waves-light btn view-team" href={`/teams/${team._id}`}>View Team Page</a>
                     </ListGroup.Item>
-                </div>
+                // </div>
             )
         })
 
@@ -38,7 +41,8 @@ export default class Teams extends Component {
                     <Jumbotron style={{
                         backgroundImage: `url(${BgImage})`,
                         backgroundSize: 'cover',
-                        color: 'white'
+                        color: 'white',
+                        textAlign: 'center',
                     }}
                     >
                         <h1 className="display-4">Fantasy Tracker</h1>
@@ -47,8 +51,8 @@ export default class Teams extends Component {
                     </Jumbotron>
                 </div>
                 <div>
-                    <h3>Teams List</h3>
                     <ListGroup>
+                    <h3>Current Teams:</h3>
                         {teamsList}
                     </ListGroup>
                 </div >

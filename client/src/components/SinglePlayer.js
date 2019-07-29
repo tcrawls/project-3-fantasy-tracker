@@ -4,7 +4,6 @@ import { Redirect, Link } from 'react-router-dom'
 import { Image } from 'react-bootstrap'
 
 
-
 export default class SinglePlayer extends Component {
 
     state = {
